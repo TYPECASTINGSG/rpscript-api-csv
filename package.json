@@ -1,5 +1,5 @@
 {
-  "name": "rpscript-api-csv",
+  "name": "@typecasting/rpscript-api-csv",
   "version": "0.1.1",
   "description": "RPScript API for csv",
   "keywords": [
