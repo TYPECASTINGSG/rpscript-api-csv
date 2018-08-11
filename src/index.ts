@@ -12,20 +12,20 @@ import {RpsContext,RpsModule,rpsAction} from 'rpscript-interface';
 export default class RPSCsv {
 
 /**
- * @function convert-csv-to-data
+ * @function csv-to-data
  * @memberof CSV
  * @param {string} csvString csv content to be parsed
  * @example
- * convert-csv-to-data read-file "input.csv" --columns=true
+ * csv-to-data --columns=true read-file "input.csv"
  * 
  * 
- * @summary convert-csv-to-data :: String -> String
+ * @summary csv-to-data :: String → String
  * 
  * @description
  * For the list of parsing options:
  * @see {@link http://csv.adaltas.com/parse/}
 */
-  @rpsAction({verbName:'convert-csv-to-data'})
+  @rpsAction({verbName:'csv-to-data'})
   async parseCsvToData (ctx:RpsContext,opts:Object, csvString?:string) : Promise<any>{
     if(csvString)
       return parse(csvString,opts);
@@ -34,20 +34,20 @@ export default class RPSCsv {
   }
 
 /**
- * @function covert-data-to-csv
+ * @function data-to-csv
  * @memberof CSV
  * @param {string} data csv content to be parsed
  * @example
- * write-file "result.csv" convert-data-to-csv $processedResult
+ * write-file "result.csv" data-to-csv $processedResult
  * 
- * @summary convert-data-to-csv :: String -> String
+ * @summary data-to-csv :: String → String
  * 
  * @description
  * For the list of parsing options:
  * @see {@link http://csv.adaltas.com/stringify/}
  * 
 */
-  @rpsAction({verbName:'convert-data-to-csv'})
+  @rpsAction({verbName:'data-to-csv'})
   async parseDataToCsv (ctx:RpsContext,opts:Object, data?:any) : Promise<any>{
     if(data)
       return stringify(data,opts);
